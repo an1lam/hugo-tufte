@@ -203,7 +203,7 @@ blockquote footer {
 ol,
 ul,
 dl {
-    width: 85%;
+    width: 55%;
     -webkit-padding-start: 5%;
     -webkit-padding-end: 5%;
 }
@@ -492,4 +492,8 @@ label.marginnote-ind {
     .video {
         width: 90%;
     }
+}
+
+li > p {
+    width: 100%;  /* Make paragraphs inside list items take full width of their container */
 }
