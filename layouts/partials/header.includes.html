@@ -19,7 +19,7 @@
     "outputStyle" (cond hugo.IsProduction "compressed" "expanded")
     "targetPath" "css/hugo-tufte.min.css"
   }}
-  {{ with . | resources.ExecuteAsTemplate "main.scss" $ | resources.ToCSS $opts }}
+  {{ with . | resources.ExecuteAsTemplate "main.scss" $ | css.Sass $opts }}
     {{ if hugo.IsProduction }}
       {{ with . | fingerprint }}
         <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
@@ -36,7 +36,7 @@
     "outputStyle" (cond hugo.IsProduction "compressed" "expanded")
     "targetPath" "css/hugo-tufte-options.min.css"
   }}
-  {{ with . | resources.ExecuteAsTemplate "main.scss" $ | resources.ToCSS $opts }}
+  {{ with . | resources.ExecuteAsTemplate "main.scss" $ | css.Sass $opts }}
     {{ if hugo.IsProduction }}
       {{ with . | fingerprint }}
         <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
